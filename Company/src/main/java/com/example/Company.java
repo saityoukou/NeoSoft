@@ -1,7 +1,17 @@
 package com.example;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Company {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long id;
+	
 	private String companyName;
 	private String postCode;
 	private String address;
@@ -9,7 +19,7 @@ public class Company {
 	private String fax;
 	private String companyShortName;
 	
-	
+	protected Company(){}
 	
 	public Company(String companyName, String postCode, String address, String tel, String fax,
 			String companyShortName) {

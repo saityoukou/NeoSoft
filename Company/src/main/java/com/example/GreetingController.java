@@ -21,4 +21,5 @@ public class GreetingController {
         model.addAttribute("company", company);
         return "greeting";
     }
+   
 }
