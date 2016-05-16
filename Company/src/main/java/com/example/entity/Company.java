@@ -1,4 +1,4 @@
-package com.example;
+package com.example.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -33,6 +33,15 @@ public class Company {
 	}
 	
 	
+	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	public String getCompanyName() {
 		return companyName;
 	}

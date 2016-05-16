@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>"src/main/resources/templates/greeting.html"
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>会社リスト</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>    
+    
+    <table class="table3" border="1">
+    
+     <tr><th>No</th><th>会社名</th><th>郵便番号</th><th>住所</th><th>TEL</th><th>FAX</th><th>会社名(略)</th></tr>
+     
+	 <tr data-th-each="company : ${companyList}">
+	 	<td th:text="${company.id}"></td>
+	 	<td th:text="${company.companyName}"></td>
+	 	<td th:text="${company.postCode}"></td>
+	 	<td th:text="${company.address}"></td>
+	 	<td th:text="${company.tel}"></td>
+	 	<td th:text="${company.fax}"></td>
+	 	<td th:text="${company.companyShortName}"></td>
+	 </tr>
+	</table>
+</body>
+</html>
