@@ -17,9 +17,8 @@ public class GreetingController {
     public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
         
-        company = new Company(null, "333-222", "川口", "090-9888-8392", "080-3445-5543", "NeoSoft");
+        company = new Company("NeoSoft 日本", "333-222", "川口", "090-9888-8392", "080-3445-5543", "NeoSoft");
         model.addAttribute("company", company);
         return "greeting";
     }
-
 }

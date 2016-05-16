@@ -10,12 +10,12 @@
     
     <table class="table3" border="1">
 	 <tr><th></th><th>値</th></tr>
-	 <tr><td>会社名</td><td th:text="${company.companyName}">222</td></tr>
-	 <tr><td>郵便番号</td><td>A-2</td></tr>
-	 <tr><td>住所</td><td>A-3</td></tr>
-	 <tr><td>TEL</td><td>A-3</td></tr>
-	 <tr><td>FAX</td><td>A-3</td></tr>
-	 <tr><td>会社略語</td><td>A-3</td></tr>
+	 <tr><td>会社名</td><td th:text="${company.companyName}"></td></tr>
+	 <tr><td>郵便番号</td><td th:text="${company.postCode}"></td></tr>
+	 <tr><td>住所</td><td th:text="${company.address}"></td></tr>
+	 <tr><td>TEL</td><td th:text="${company.tel}"></td></tr>
+	 <tr><td>FAX</td><td th:text="${company.fax}"></td></tr>
+	 <tr><td>会社略語</td><td th:text="${company.companyShortName}"></td></tr>
 	</table>
 </body>
 </html>
