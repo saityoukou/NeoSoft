@@ -8,7 +8,8 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.stereotype.Repository;
 
-@RepositoryRestResource(collectionResourceRel = "company", path = "company")
+//@RepositoryRestResource(collectionResourceRel = "company", path = "company")
+@Repository
 public interface CompanyRepository extends JpaRepository<Company, Long> {
     List<Company> findByTel(@Param("tel") String telNum);
     
