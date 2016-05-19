@@ -15,21 +15,22 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.domain.Company;
 import com.example.domain.CompanyRepository;
 import com.example.domain.PeoPle;
 
-@Controller
+@RestController
 @RequestMapping("/company")
-public class CompanyListController {
+public class CompanyRestListController {
 
 	@Autowired
 	CompanyRepository companyRepository;
 
 //    @RequestMapping("/list")
-    @RequestMapping(path = "/list", method = RequestMethod.GET)
-    public String greeting(@RequestParam(value="companyName", required=false) String name, Model model) {
+    @RequestMapping(path = "/listRest", method = RequestMethod.GET)
+    public List<Company> greeting(@RequestParam(value="companyName", required=false) String name, Model model) {
     	List<Company> companyList = null;
     	
     	if( name == null || name.equals("")){
@@ -37,9 +38,7 @@ public class CompanyListController {
     	}else{
     		companyList = companyRepository.findByCompanyName(name);
     	}
-        //company = new Company("NeoSoft 日本", "333-222", "川口", "090-9888-8392", "080-3445-5543", "NeoSoft");
-    	model.addAttribute("companyList", companyList);	
-        return "companyInfoList";
+    	
+    	return companyList;
     }
-   
 }
